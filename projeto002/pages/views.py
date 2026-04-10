@@ -4,7 +4,11 @@ from django.http import HttpResponse
 """ def home(request):
     return HttpResponse('Olá, Django!') """
 def about(request):
-    return HttpResponse('Página Sobre')
+    return render(
+        request,
+        'pages/about.html',
+        {'descricao': 'Descrição do sobre.'}
+    )
 
 def home(request):
     return render(
