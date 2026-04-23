@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Meu Site{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'pages/css/style.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'pages/css/style.css' %}"> -->
+     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <header>
-        <h1>Meu Sistema</h1>
+<body class="bg-blue-600">
+    <header class="bg-blue-900 text-white p-4">
+        <h1 class="text-xl font-bold">Meu Sistema</h1>
     </header>
     <main>
         {% block content %}{% endblock %}
