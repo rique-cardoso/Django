@@ -1,0 +1,22 @@
+{% extends 'pages/base.html' %}
+
+{% block title %}Excluir Post{% endblock %}
+
+{% block content %}
+    <div class="bg-white p-6 rounded shadow max-w-md">
+        <h2 class="text-xl font-bold mb-4">
+            Confirmar exclusão
+        </h2>
+        <p class="mb-4">
+            Tem certeza que deseja Excluir
+            <strong>{{ post.titulo }}</strong>
+        </p>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded">Excluir</button>
+            <a href="{% url 'post_detail' post.id %}" class="ml-4 text-gray-600">Cencelar</a>
+        </form>
+    </div>
+{% endblock %}

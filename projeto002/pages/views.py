@@ -73,3 +73,16 @@ def post_update(request, post_id):
         'pages/post_form.html',
         {'form': form}
     )
+
+def post_delete(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+
+    if request.method == 'POST':
+        post.delete()
+        return redirect('posts')
+    
+    return render(
+        request,
+        'pages/post_confirm_delete.html',
+        {'post': post}
+    )
