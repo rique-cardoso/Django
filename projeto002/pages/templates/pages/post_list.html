@@ -4,7 +4,9 @@
 
 {% block content %}
     <h2 class="text-2xl font-bold mb-4">Posts</h2>
-
+    <nav>
+        <a style="padding: 0 20px;" href="{% url 'logout' %}">Sair</a>
+    </nav>
     <ul class="space-y-4">
         {% for post in posts %}
             <li class="bg-white p-4 rounded shadow">

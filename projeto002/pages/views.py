@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post
 from .forms import PostForm
+from django.contrib.auth.decorators import login_required
 # from django.http import HttpResponse
 # Create your views here.
 """ def home(request):
@@ -37,6 +38,7 @@ def post_detail(request, post_id):
         {'post': post}
     )
 
+@login_required
 def post_create(request):
     if request.method == 'POST':
         form = PostForm(request.POST)
@@ -56,6 +58,7 @@ def post_create(request):
         {'form': form}
     )
 
+@login_required
 def post_update(request, post_id):
     post = get_object_or_404(Post, id=post_id)
 
@@ -74,6 +77,7 @@ def post_update(request, post_id):
         {'form': form}
     )
 
+@login_required
 def post_delete(request, post_id):
     post = get_object_or_404(Post, id=post_id)
 

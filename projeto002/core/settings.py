@@ -56,7 +56,9 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'templates',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,4 +122,4 @@ STATIC_URL = 'static/'
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/posts/'
-LOGIN_REDIRECT_URL = '/login/'
+LOGOUT_REDIRECT_URL = '/login/'
